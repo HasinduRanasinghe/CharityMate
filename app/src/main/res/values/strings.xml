@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">CharityMate</string>
+    <string name="WelcomeText">WELCOME</string>
+    <string name="getStarted">Get Started</string>
+    <string name="RegWelcomeTxt">Choose Your Option</string>
+    <string name="button_Reg">Register</string>
+    <string name="button_login">Login</string>
+    <string name="regAsAGiverRegT">REGISTER</string>
+    <string name="regAsAGiverName">Name</string>
+    <string name="regAsAGiverEmail">Email</string>
+    <string name="regAsAGiverUname">Username</string>
+    <string name="button_RegGiverSbmt">Register</string>
+    <string name="regAsAGiverPassword">Enter Password</string>
+    <string name="regAsAGiverRePassword">Re-enter Password</string>
+    <string name="regAsAGiverTel">Mobile Number</string>
+
 </resources>
