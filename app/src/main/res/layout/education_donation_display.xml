@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainActivity" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="517dp"
+        android:layout_height="585dp"
+        android:layout_marginBottom="300dp"
+        android:background="@drawable/display_background"
+        android:backgroundTint="#FFD7DA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageArrow"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="350dp"
+            android:backgroundTint="#0B0A0A"
+            android:contentDescription="view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/tvEducation"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="108dp"
+            android:layout_marginEnd="108dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="@string/tvEducation"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="278dp"
+            android:layout_height="364dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="81dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvEducation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageArrow"
+            app:srcCompat="@drawable/pngwing_com__2_" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnDonate"
+        android:layout_width="278dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="169dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#F4E5F6"
+        android:text="@string/btnDonate"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <TextView
+        android:id="@+id/educationDescription"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text="@string/educationDescription"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="170dp"
+        android:progressDrawable="@drawable/custom_progress_vg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/educationDescription" />
+
+    <TextView
+        android:id="@+id/donationValue"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:text="@string/donationValue"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDonate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+</androidx.constraintlayout.widget.ConstraintLayout>
