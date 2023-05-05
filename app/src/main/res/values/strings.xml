@@ -46,5 +46,22 @@
     <string name="upTVemail">Email</string>
     <string name="upTVTel">Mobile Number</string>
     <string name="upTVnic">NIC</string>
+    <string name="tvAddDonation">Hunger Relief Donations</string>
+    <string name="tvTitle">Title</string>
+    <string name="EditTextTitle">Donation Title</string>
+    <string name="tvDescriptionAdd">Description</string>
+    <string name="EditTextDescription">Enter Description</string>
+    <string name="tvAmount">Amount</string>
+    <string name="editTextEnterAmmount">Enter Amount</string>
+    <string name="tvStart">Start Date</string>
+    <string name="tvEndDate">End Date</string>
+    <string name="Date1">dd/mm/yy</string>
+    <string name="Date2">dd/mm/yy</string>
+    <string name="amount">00.00</string>
+    <string name="BtnAddDonation">ADD</string>
+    <string name="btnAdd">Submit</string>
+    <string name="hungerLocation">Location</string>
+    <string name="number">Contact</string>
+    <string name="btnSubmitt">SUBMIT</string>
 
 </resources>
