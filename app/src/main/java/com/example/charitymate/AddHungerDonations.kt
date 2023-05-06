@@ -52,32 +52,6 @@ class AddHungerDonations : AppCompatActivity() {
 
     private fun uploadImage() {
 
-//        storageRef = storageRef.child(System.currentTimeMillis().toString())
-//        imageURI?.let {
-//            storageRef.putFile(it).addOnCompleteListener { task ->
-//                if(task.isSuccessful){
-//
-//                    storageRef.downloadUrl.addOnSuccessListener { uri ->
-//                        val map = HashMap<String, Any>()
-//                        map["pic"] = uri.toString()
-//
-//                        firebaseFirestore.collection("HungerImages").add(map).addOnCompleteListener{ firestoreTask ->
-//                            if(firestoreTask.isSuccessful){
-//                                Toast.makeText(this, "Uploaded Succeccfully", Toast.LENGTH_LONG).show()
-//                            }else{
-//                                Toast.makeText(this, firestoreTask.exception?.message, Toast.LENGTH_LONG).show()
-//                            }
-//
-//                            binding.addImage.setImageResource(R.drawable.baseline_image_24)
-//                        }
-//                    }
-//                }else{
-//                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
-//                    binding.addImage.setImageResource(R.drawable.baseline_image_24)
-//                }
-//            }
-//        }
-
         storageRef = storageRef.child(System.currentTimeMillis().toString())
         imageURI?.let {
             storageRef.putFile(it).addOnCompleteListener { task ->
@@ -91,6 +65,11 @@ class AddHungerDonations : AppCompatActivity() {
                         val amountNeeded = binding.editTextEnterAmount.text.toString().toDouble()
                         val startDate = binding.editStartDate.text.toString().trim()
                         val endDate = binding.editEndDate.text.toString().trim()
+
+                        // Check if any of the required fields are empty
+                        if (title.isEmpty() || description.isEmpty() || location.isEmpty() || contact.isEmpty() || amountNeeded == 0.0 || startDate.isEmpty() || endDate.isEmpty()) {
+                            Toast.makeText(this, "Please fill in all the required fields", Toast.LENGTH_SHORT).show()
+                        }
 
                         val map = HashMap<String, Any>()
                         map["pic"] = uri.toString()

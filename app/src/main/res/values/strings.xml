@@ -63,5 +63,20 @@
     <string name="hungerLocation">Location</string>
     <string name="number">Contact</string>
     <string name="btnSubmitt">SUBMIT</string>
+    <string name="buttonSave">Update</string>
+    <string name="updateDonation">Update Hunger Details</string>
+    <string name="buttonAddDonation">Submit</string>
+    <string name="add_donation">Add Donation</string>
+    <string name="EducationName">Education Center Name</string>
+    <!--    <string name="hungerText">Hunger Relief Management</string>-->
+    <!--    <string name="HungerCard01T01">Donate to fight against malnutrition in Kahatagasdigiliya</string>-->
+    <!--    <string name="button_editHunger01">Edit</string>-->
+    <!--    <string name="button_deleteHunger01">Delete</string>-->
+    <!--    <string name="HungerCard02T01">Donate to the refugee camp and help them to relieve their hunger</string>-->
+    <!--    <string name="button_editHunger02">Edit</string>-->
+    <!--    <string name="button_deleteHunger02">Delete</string>-->
+    <!--    <string name="button_calProg01">Calculate Progress</string>-->
+    <!--    <string name="button_calProg">Calculate Progress</string>-->
+    <!--    <string name="button_calProg02">Calculate Progress</string>-->
 
 </resources>
