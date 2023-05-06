@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CharityMate</string>
+    <string name="btnHealth">Health</string>
+    <string name="btnEducation">Education</string>
+    <string name="btnHunger">Hunger Relief</string>
+    <string name="btnAll">All types</string>
 </resources>
