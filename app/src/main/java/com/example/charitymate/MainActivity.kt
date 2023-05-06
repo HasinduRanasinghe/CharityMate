@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
     val dataBase = Firebase.firestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.add_donation)
     }
 }

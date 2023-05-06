@@ -12,6 +12,7 @@
         android:layout_height="508dp"
         android:layout_marginBottom="300dp"
         android:background="@drawable/background_bottom"
+        android:backgroundTint="#FFFFD1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -62,7 +63,7 @@
             android:layout_marginStart="60dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="60dp"
-            android:text="@string/tvAddDonation"
+            android:text="Health Donation"
             android:textColor="#343434"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -93,7 +94,7 @@
             android:layout_marginEnd="114dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/EditTextTitle"
+            android:hint="@string/EditTextTitle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
@@ -124,7 +125,7 @@
             android:ems="10"
             android:freezesText="false"
             android:inputType="textPersonName"
-            android:text="@string/EditTextDescription"
+            android:hint="@string/EditTextDescription"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -138,9 +139,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="111dp"
             android:ems="10"
-            android:hint="00.00"
             android:inputType="number"
-            android:text="@string/amount"
+            android:hint="0.00"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -168,7 +168,7 @@
             android:layout_marginStart="16dp"
             android:ems="10"
             android:inputType="date"
-            android:text="@string/Date1"
+            android:hint="@string/Date1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvStartDate"
@@ -195,7 +195,7 @@
             android:layout_marginEnd="8dp"
             android:ems="10"
             android:inputType="date"
-            android:text="@string/Date2"
+            android:hint="@string/Date2"
             android:textColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -217,14 +217,14 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextEnterAmount" />
 
         <EditText
-            android:id="@+id/editHealthName"
+            android:id="@+id/healthLocation"
             android:layout_width="214dp"
             android:layout_height="48dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="111dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/healthName"
+            android:hint="Location"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/EditTextDescription" />
@@ -237,10 +237,10 @@
             android:layout_marginEnd="114dp"
             android:ems="10"
             android:inputType="number|textPersonName"
-            android:text="@string/number"
+            android:hint="@string/number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editHealthName" />
+            app:layout_constraintTop_toBottomOf="@+id/healthLocation" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
