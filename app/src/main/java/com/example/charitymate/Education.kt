@@ -36,7 +36,7 @@ class Education : AppCompatActivity() {
     @SuppressLint("NotifyDataSetChanged")
 
     private fun getData() {
-        firebaseFirestore.collection("HungerDetails")
+        firebaseFirestore.collection("EducationDetails")
             .get()
             .addOnSuccessListener { documents ->
                 mList.clear()
@@ -51,8 +51,8 @@ class Education : AppCompatActivity() {
                     val startDate = data["startDate"].toString()
                     val endDate = data["endDate"].toString()
                     val imageUrl = data["pic"].toString()
-                    val hungerDetails = EducationDetails(id, title, description, location, amountNeeded, contact, startDate, endDate, imageUrl)
-                    mList.add(hungerDetails)
+                    val educationDetails = EducationDetails(id, title, description, location, amountNeeded, contact, startDate, endDate, imageUrl)
+                    mList.add(educationDetails)
                 }
                 adapter.notifyDataSetChanged()
             }

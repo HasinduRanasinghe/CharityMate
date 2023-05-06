@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.charitymate.databinding.EducationAdminBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
-class AdminHunger : AppCompatActivity() {
+class AdminEducation : AppCompatActivity() {
 
     private lateinit var binding: EducationAdminBinding
     private lateinit var firebaseFirestore: FirebaseFirestore
