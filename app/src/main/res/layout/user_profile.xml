@@ -49,47 +49,72 @@
             android:id="@+id/upText"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="25dp"
             android:gravity="center"
-            android:text="@string/upText"
+            android:text="Hello"
             android:textColor="#FAFAFA"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/upTVuname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Username"
+            android:textColor="#FBFBFB"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/upText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/button_edit"
+        android:id="@+id/button_dash"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="260dp"
         android:backgroundTint="#1FC39E"
-        android:text="@string/button_edit"
+        android:text="@string/button_dash"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/button_logOut"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <Button
+        android:id="@+id/button_logOut"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="260dp"
+        android:backgroundTint="#1FC39E"
+        android:text="Logout"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_dash"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-    <Button
-        android:id="@+id/button_dash"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="280dp"
-        android:backgroundTint="#1FC39E"
-        android:text="@string/button_dash"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/button_edit"
-        app:layout_constraintHorizontal_bias="0.5"
+    <TextView
+        android:id="@+id/upTVemail"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/upTVemail"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/upTVname" />
 
     <TextView
         android:id="@+id/upTVname"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="48dp"
         android:gravity="center"
         android:text="@string/upTVname"
         android:textColor="#000000"
@@ -100,45 +125,18 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <TextView
-        android:id="@+id/upTVemail"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="@string/upTVemail"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/upTVname" />
-
-    <TextView
         android:id="@+id/upTVTel"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:text="@string/upTVTel"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/upTVemail" />
 
-    <TextView
-        android:id="@+id/upTVnic"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="@string/upTVnic"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/upTVTel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

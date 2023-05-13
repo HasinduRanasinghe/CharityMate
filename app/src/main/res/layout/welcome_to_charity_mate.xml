@@ -51,6 +51,7 @@
         android:background="@drawable/circular_shape"
         android:backgroundTint="#1FC39E"
         android:contentDescription="start"
+        android:onClick="displayUserWelcome"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

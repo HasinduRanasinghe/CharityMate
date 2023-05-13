@@ -1,134 +1,72 @@
 package com.example.charitymate
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.database.DatabaseReference
+import com.example.charitymate.databinding.RegisterPageBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ServerValue
+
 
 class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var nameEditText: EditText
-    private lateinit var emailEditText: EditText
-    private lateinit var usernameEditText: EditText
-    private lateinit var numberEditText: EditText
-    private lateinit var passwordEditText: EditText
-    private lateinit var reenterPasswordEditText: EditText
-    private lateinit var registerButton: Button
+    private lateinit var binding: RegisterPageBinding
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var database: FirebaseDatabase
 
-    //Creating a database reference
-    private lateinit var db: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.register_page)
 
-        nameEditText = findViewById(R.id.regAsAGiverName)
-        emailEditText = findViewById(R.id.regAsAGiverEmail)
-        usernameEditText = findViewById(R.id.regAsAGiverUname)
-        numberEditText = findViewById(R.id.regAsAGiverTel)
-        passwordEditText = findViewById(R.id.regAsAGiverPassword)
-        reenterPasswordEditText = findViewById(R.id.regAsAGiverRePassword)
-        registerButton = findViewById(R.id.button_RegGiverSbmt)
+        binding = RegisterPageBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        db = FirebaseDatabase.getInstance().getReference("Users")
+        firebaseAuth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance()
 
-        registerButton.setOnClickListener{
-            registerUser()
-        }
+        binding.buttonRegister.setOnClickListener {
+            val name = binding.regAsAGiverName.text.toString()
+            val email = binding.regAsAGiverEmail.text.toString()
+            val username = binding.regAsAGiverUname.text.toString()
+            val contact = binding.regAsAGiverTel.text.toString()
+            val password = binding.regAsAGiverPassword.text.toString()
+            val rePassword = binding.regAsAGiverRePassword.text.toString()
 
-    }
+            if(name.isNotEmpty() && email.isNotEmpty() && username.isNotEmpty() && contact.isNotEmpty() && password.isNotEmpty() && rePassword.isNotEmpty()){
+                if(password == rePassword){
 
-    private fun registerUser() {
+                    firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
+                        if(it.isSuccessful){
 
-        //Getting values
-        val name = nameEditText.text.toString()
-        val email = emailEditText.text.toString()
-        val username = usernameEditText.text.toString()
-        val number = numberEditText.text.toString()
-        val password = passwordEditText.text.toString()
-        val reenterPassword = reenterPasswordEditText.text.toString()
+                            val user = firebaseAuth.currentUser
+                            val userId = user?.uid ?:""
+                            val userRef = database.reference.child("Users").child(userId)
+                            val userData = mapOf(
+                                "name" to name,
+                                "email" to email,
+                                "username" to username,
+                                "contact" to contact,
+                                "password" to password
+                            )
+                            userRef.setValue(userData)
 
-        //Validations
-        if(name.isEmpty()){
-            nameEditText.error = "Please enter name"
-        }
-        if(email.isEmpty()){
-            emailEditText.error = "Please enter email"
-        }
-        if(username.isEmpty()){
-            usernameEditText.error = "Please enter username"
-        }
-        if(number.isEmpty()){
-            numberEditText.error = "Please enter number"
-        }
-        if(password.isEmpty()){
-            passwordEditText.error = "Please enter password"
-        }
-        if(reenterPassword.isEmpty()){
-            reenterPasswordEditText.error = "Please re-enter password"
-        }
+                            val intent = Intent(this, UserWelcomeActivity::class.java)
+                            startActivity(intent)
 
-        if (password != reenterPassword) {
-            val snackbar = Snackbar.make(registerButton, "Password do not match", Snackbar.LENGTH_LONG)
-            snackbar.setAction("OK") {
-                snackbar.dismiss()
-            }
-            snackbar.setActionTextColor(resources.getColor(R.color.white))
-            snackbar.setTextColor(resources.getColor(android.R.color.white))
-            snackbar.setBackgroundTint(resources.getColor(R.color.black))
-            snackbar.show()
-            //Toast.makeText(this, "Passwords do not match", Toast.LENGTH_LONG).show()
-            return
-        }
+                        }else{
+                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
+                        }
+                    }
 
-        if(name.isEmpty() || email.isEmpty() || username.isEmpty() || number.isEmpty() || password.isEmpty() || reenterPassword.isEmpty()){
-            val snackbar = Snackbar.make(registerButton, "Please fill in all required fields", Snackbar.LENGTH_LONG)
-            snackbar.setAction("OK") {
-                snackbar.dismiss()
-            }
-            snackbar.setActionTextColor(resources.getColor(R.color.white))
-            snackbar.setTextColor(resources.getColor(android.R.color.white))
-            snackbar.setBackgroundTint(resources.getColor(R.color.black))
-            snackbar.show()
-            //Toast.makeText(this, "Please fill in all required fields", Toast.LENGTH_LONG).show()
-            return
-        }
-
-        //Auto generating an userID
-        val userID = db.push().key!!
-
-        //Creating a user object
-        val user = User(userID, name, email, username, number, password)
-
-        val timestamp = ServerValue.TIMESTAMP
-
-        //Database related implementations
-        db.child(userID).setValue(user)
-            .addOnCompleteListener{
-                val snackbar = Snackbar.make(registerButton, "Data inserted successfully", Snackbar.LENGTH_LONG)
-                snackbar.setAction("OK") {
-                    snackbar.dismiss()
+                }else{
+                    Toast.makeText(this, "Password is not matching", Toast.LENGTH_LONG).show()
                 }
-                snackbar.setActionTextColor(resources.getColor(R.color.white))
-                snackbar.setTextColor(resources.getColor(android.R.color.white))
-                snackbar.setBackgroundTint(resources.getColor(R.color.black))
-                snackbar.show()
-                //Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_LONG).show()
-            }.addOnFailureListener{ err ->
-                val snackbar = Snackbar.make(registerButton, "Error ${err.message}", Snackbar.LENGTH_LONG)
-                snackbar.setAction("OK") {
-                    snackbar.dismiss()
-                }
-                snackbar.setActionTextColor(resources.getColor(R.color.white))
-                snackbar.setTextColor(resources.getColor(android.R.color.white))
-                snackbar.setBackgroundTint(resources.getColor(R.color.black))
-                snackbar.show()
-                //Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+            }else{
+                Toast.makeText(this, "Empty fields are not allowed", Toast.LENGTH_LONG).show()
             }
-    }
+        }
+
+
+        }
 }
