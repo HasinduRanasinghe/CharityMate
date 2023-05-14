@@ -21,6 +21,11 @@ class AdminEducation : AppCompatActivity() {
         binding = EducationAdminBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.adminProfIcon.setOnClickListener {
+            val intent = Intent(this, AdminProfile::class.java)
+            startActivity(intent)
+        }
+
         val addDonationButton = findViewById<Button>(R.id.addDonation)
         addDonationButton.setOnClickListener {
             val intent = Intent(this, AddEducationDonations::class.java)
@@ -62,6 +67,6 @@ class AdminEducation : AppCompatActivity() {
                     mList.add(educationDetails)
                 }
                 adapter.notifyDataSetChanged()
-                }
+            }
     }
 }

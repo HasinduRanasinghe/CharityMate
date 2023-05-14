@@ -88,6 +88,7 @@ class AddEducationDonations : AppCompatActivity() {
                                         "Uploaded Successfully",
                                         Toast.LENGTH_LONG
                                     ).show()
+                                    finish()
                                 } else {
                                     Toast.makeText(
                                         this,
@@ -104,7 +105,7 @@ class AddEducationDonations : AppCompatActivity() {
                     binding.addImage.setImageResource(R.drawable.baseline_image_24)
                 }
             }
-            }
+        }
     }
 
 
