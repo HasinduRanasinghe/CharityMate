@@ -26,6 +26,18 @@ class AddHungerDonations : AppCompatActivity() {
         registerClickEvents()
     }
 
+    private fun clearFields() {
+        binding.EditTextTitle.text = null
+        binding.EditTextDescription.text = null
+        binding.hungerLocation.text = null
+        binding.editContact.text = null
+        binding.editTextEnterAmount.text = null
+        binding.editStartDate.text = null
+        binding.editEndDate.text = null
+        binding.addImage.setImageDrawable(null)
+        imageURI = null
+    }
+
     private fun registerClickEvents() {
         binding.button3.setOnClickListener {
 
@@ -89,6 +101,8 @@ class AddHungerDonations : AppCompatActivity() {
                                         "Uploaded Successfully",
                                         Toast.LENGTH_LONG
                                     ).show()
+                                    clearFields()
+                                    finish()
                                 } else {
                                     Toast.makeText(
                                         this,

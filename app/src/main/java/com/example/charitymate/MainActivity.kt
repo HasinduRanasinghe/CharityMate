@@ -20,35 +20,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        setContentView(R.layout.activity_admin_hunger)
-//        val getStartedButton = findViewById<Button>(R.id.addDonation)
-//        getStartedButton.setOnClickListener {
-//            val intent = Intent(this, AdminHunger::class.java)
-//            startActivity(intent)
-//        }
-
-//        setContentView(R.layout.hunger_relief)
-//        val getStartedButton = findViewById<Button>(R.id.btnAll)
-//        getStartedButton.setOnClickListener {
-//            val intent = Intent(this, HungerRelief::class.java)
-//            startActivity(intent)
-//        }
-
-//        setContentView(R.layout.activity_admin_health)
-//        val getStartedButton = findViewById<Button>(R.id.addDonation)
-//        getStartedButton.setOnClickListener {
-//            val intent = Intent(this, AdminHealth::class.java)
-//            startActivity(intent)
-//        }
-
-//        setContentView(R.layout.health)
-//        val getStartedButton = findViewById<Button>(R.id.btnAll)
-//        getStartedButton.setOnClickListener {
-//            val intent = Intent(this, Health::class.java)
-//            startActivity(intent)
-//        }
-
-
     }
 
     fun displayUserWelcome(view: View){

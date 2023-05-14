@@ -24,6 +24,7 @@ class HungerRelief : AppCompatActivity() {
         initVars()
         getData()
 
+        //Directing to other sections
         binding.btnHealth.setOnClickListener {
             val intent = Intent(this, Health::class.java)
             startActivity(intent)
@@ -31,6 +32,16 @@ class HungerRelief : AppCompatActivity() {
 
         binding.imageButton2.setOnClickListener {
             val intent = Intent(this, UserProfile::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnEducation.setOnClickListener {
+            val intent = Intent(this, Education::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnMF.setOnClickListener {
+            val intent = Intent(this, Microfinance::class.java)
             startActivity(intent)
         }
 

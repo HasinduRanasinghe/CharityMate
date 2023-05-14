@@ -15,7 +15,6 @@ class HungerItemsAdapter(private var mList: List<HungerDetails>) :
     inner class HungerViewHolder(var binding: HungerItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HungerViewHolder {
         val binding = HungerItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return HungerViewHolder(binding)

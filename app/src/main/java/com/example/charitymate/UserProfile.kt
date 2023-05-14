@@ -10,10 +10,8 @@ import com.google.firebase.auth.FirebaseAuth
 class UserProfile : AppCompatActivity() {
 
     private lateinit var sessionManager: SessionManager
-
     private lateinit var binding: UserProfileBinding
     private lateinit var firebaseAuth: FirebaseAuth
-
 
     private lateinit var nameTextView: TextView
     private lateinit var emailTextView: TextView

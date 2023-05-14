@@ -38,17 +38,50 @@ class MakeAHungerDonation : AppCompatActivity() {
         val editDate = findViewById<EditText>(R.id.editDate)
         val editCVV = findViewById<EditText>(R.id.editCVV)
 
-        // Retrieve values from the EditText and Spinner
+        // Retrieve values
         val amount = editAmount.text.toString()
         val paymentMethod = spnPayMethod.selectedItem.toString()
         val cardNumber = editCardNumber.text.toString()
         val expirationDate = editDate.text.toString()
         val cvv = editCVV.text.toString()
 
+        //Validations
+        if (amount.isEmpty()) {
+            editAmount.error = "Amount is required"
+            return
+        }
+
+        val amountValue = amount.toDoubleOrNull()
+        if (amountValue == null || amountValue <= 0) {
+            editAmount.error = "Invalid amount"
+            return
+        }
+
+        if (cardNumber.isEmpty()) {
+            editCardNumber.error = "Card number is required"
+            return
+        }
+
+        if (expirationDate.isEmpty()) {
+            editDate.error = "Expiration date is required"
+            return
+        }
+
+        if (cvv.isEmpty()) {
+            editCVV.error = "CVV is required"
+            return
+        }
+
+        if (cvv.length != 3) {
+            editCVV.error = "CVV should have 3 digits"
+            return
+        }
+
         // Save the payment to Firestore
         savePayment(amount, paymentMethod, cardNumber, expirationDate, cvv)
     }
 
+    //savePayment function
     private fun savePayment(
         amount: String,
         paymentMethod: String,
@@ -56,7 +89,6 @@ class MakeAHungerDonation : AppCompatActivity() {
         expirationDate: String,
         cvv: String
     ) {
-        // Convert amount to double
         val amountValue = amount.toDoubleOrNull() ?: 0.0
 
         // Create a new document in the "Payments" collection in Firestore
@@ -103,20 +135,22 @@ class MakeAHungerDonation : AppCompatActivity() {
                                         "Amount needed updated",
                                         Toast.LENGTH_SHORT
                                     ).show()
+
+                                    finish()
                                 }
                                 .addOnFailureListener { e ->
-                                    // Error occurred while updating the new amount needed
                                     Toast.makeText(
                                         this@MakeAHungerDonation,
                                         "Error updating amount needed: ${e.message}",
                                         Toast.LENGTH_SHORT
                                     ).show()
+
+                                    finish()
                                 }
                         }
                     }
             }
             .addOnFailureListener { e ->
-                // Error occurred while saving the payment
                 Toast.makeText(
                     this@MakeAHungerDonation,
                     "Error saving payment: ${e.message}",

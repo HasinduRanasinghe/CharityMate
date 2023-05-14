@@ -33,7 +33,6 @@ class AdminProfile : AppCompatActivity() {
 
         nameTextView = findViewById(R.id.apTVname)
         emailTextView = findViewById(R.id.apTVemail)
-//        usernameTextView = findViewById(R.id.apTVuname)
         contactTextView = findViewById(R.id.apTVTel)
 
         if (sessionManager.isLoggedIn()) {
@@ -44,7 +43,6 @@ class AdminProfile : AppCompatActivity() {
 
             nameTextView.text = name
             emailTextView.text = email
-//            usernameTextView.text = username
             contactTextView.text = contact
 
         } else {
@@ -83,23 +81,23 @@ class AdminProfile : AppCompatActivity() {
         popupMenu.setOnMenuItemClickListener { menuItem: MenuItem ->
             when (menuItem.itemId) {
                 R.id.menu_item1 -> {
-                    // Handle menu item 1 click
                     val intent = Intent(this, AdminHunger::class.java)
                     startActivity(intent)
                     true
                 }
                 R.id.menu_item2 -> {
-                    // Handle menu item 2 click
                     val intent = Intent(this, AdminHealth::class.java)
                     startActivity(intent)
                     true
                 }
                 R.id.menu_item3 -> {
-                    // Handle menu item 3 click
+                    val intent = Intent(this, AdminEducation::class.java)
+                    startActivity(intent)
                     true
                 }
                 R.id.menu_item4 -> {
-                    // Handle menu item 3 click
+                    val intent = Intent(this, AdminMf::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false
