@@ -68,6 +68,36 @@
     <string name="buttonAddDonation">Submit</string>
     <string name="add_donation">Add Donation</string>
     <string name="EducationName">Education Center Name</string>
+    <string name="apText">Hello Admin</string>
+    <string name="apTVname">Name</string>
+    <string name="apTVemail">Email</string>
+    <string name="apTVTel">Mobile Number</string>
+    <string name="apTVnic">NIC</string>
+    <string name="apTVCat">Section</string>
+    <string name="tvDonation" translatable="false">Donation Recipient</string>
+    <string name="tvAmountPay" translatable="false">Enter Amount</string>
+    <string name="tvPayMethod" translatable="false">Payment Method</string>
+    <string name="tvPayDetails" translatable="false">Payment Details</string>
+    <string name="editAmount" translatable="false">0.00</string>
+    <string name="btnAccInfo" translatable="false">Account Information</string>
+    <string name="btnSendDonation" translatable="false">Send Donation</string>
+    <string name="tvCardNumber" translatable="false">Card Number</string>
+    <string name="editCardNumber" translatable="false">Enter card number</string>
+    <string name="tvExpire" translatable="false">Expiry date</string>
+    <string name="tvCVV" translatable="false">CVV</string>
+    <string name="editDate" translatable="false">MM/YY</string>
+    <string name="switch01" translatable="false">Remember Details</string>
+    <string name="btnBack" translatable="false">BACK</string>
+    <string name="date" translatable="false">mm/yy</string>
+    <string name="cvv" translatable="false">xxx</string>
+    <string name="tvPayment" translatable="false">Make your Donation</string>
+    <string name="btnConfirmed" translatable="false">CONFIRM</string>
+    <string name="btnConfirm" translatable="false">CONFIRM</string>
+    <string-array name="methods">
+        <item>Credit card</item>
+        <item>Debit card</item>
+        <item>Paypal</item>
+    </string-array>
     <!--    <string name="hungerText">Hunger Relief Management</string>-->
     <!--    <string name="HungerCard01T01">Donate to fight against malnutrition in Kahatagasdigiliya</string>-->
     <!--    <string name="button_editHunger01">Edit</string>-->

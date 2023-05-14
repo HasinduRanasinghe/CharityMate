@@ -54,6 +54,11 @@ class UserProfile : AppCompatActivity() {
         binding.buttonLogOut.setOnClickListener {
             logout()
         }
+
+        binding.buttonDash.setOnClickListener {
+            val intent = Intent(this, HungerRelief::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun logout() {
