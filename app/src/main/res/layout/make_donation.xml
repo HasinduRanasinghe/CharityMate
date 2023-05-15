@@ -109,7 +109,7 @@
             android:layout_marginEnd="179dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/editAmount"
+            android:hint="@string/editAmount"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAmount" />
@@ -135,7 +135,7 @@
             android:layout_marginEnd="77dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/editCardNumber"
+            android:hint="@string/editCardNumber"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -171,7 +171,7 @@
             android:layout_marginEnd="75dp"
             android:ems="10"
             android:inputType="date"
-            android:text="@string/date"
+            android:hint="@string/date"
             app:layout_constraintEnd_toStartOf="@+id/editCVV"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvExpire" />
@@ -183,21 +183,9 @@
             android:layout_marginEnd="127dp"
             android:ems="10"
             android:inputType="text"
-            android:text="@string/cvv"
+            android:hint="@string/cvv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCVV" />
-
-        <Switch
-            android:id="@+id/switch01"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginStart="42dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="209dp"
-            android:text="@string/switch01"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editDate" />
 
         <Button
             android:id="@+id/btnConfirmed"

@@ -26,6 +26,11 @@ class AdminHealth : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.adminProfIcon.setOnClickListener {
+            val intent = Intent(this, AdminProfile::class.java)
+            startActivity(intent)
+        }
+
         initVars()
         getData()
 

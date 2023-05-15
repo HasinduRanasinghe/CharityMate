@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFD1"
+        android:background="#F4E5F6"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -34,20 +34,20 @@
             android:textStyle="bold"/>
 
         <Button
-            android:id="@+id/button_editHungerAdmin"
+            android:id="@+id/button_editHealthAdmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#1FC39E"
             android:gravity="center"
-            android:text="EDIT"/>
+            android:text="Edit"/>
 
         <Button
-            android:id="@+id/button_deleteHungerAdmin"
+            android:id="@+id/button_deleteHealthAdmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#1FC39E"
             android:gravity="center"
-            android:text="DELETE" />
+            android:text="Delete" />
 
     </LinearLayout>
 

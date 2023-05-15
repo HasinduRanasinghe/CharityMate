@@ -10,7 +10,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
-class AddHealthDonations : AppCompatActivity(){
+class  AddHealthDonations : AppCompatActivity(){
     private lateinit var binding: ActivityAddHealthDonationsBinding
     private lateinit var firebaseFirestore: FirebaseFirestore
     private lateinit var storageRef: StorageReference
@@ -65,7 +65,6 @@ class AddHealthDonations : AppCompatActivity(){
                         val startDate = binding.editStartDate.text.toString().trim()
                         val endDate = binding.editEndDate.text.toString().trim()
 
-                        // Check if any of the required fields are empty
                         if (title.isEmpty() || description.isEmpty() || location.isEmpty() || contact.isEmpty() || amountNeeded == 0.0 || startDate.isEmpty() || endDate.isEmpty()) {
                             Toast.makeText(this, "Please fill in all the required fields", Toast.LENGTH_SHORT).show()
                         }
@@ -88,6 +87,7 @@ class AddHealthDonations : AppCompatActivity(){
                                         "Uploaded Successfully",
                                         Toast.LENGTH_LONG
                                     ).show()
+                                    finish()
                                 } else {
                                     Toast.makeText(
                                         this,

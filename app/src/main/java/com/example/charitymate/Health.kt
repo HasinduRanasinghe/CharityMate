@@ -1,6 +1,7 @@
 package com.example.charitymate
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +21,25 @@ class Health : AppCompatActivity(){
 
         initVars()
         getData()
+
+        binding.btnHunger.setOnClickListener {
+            val intent = Intent(this, HungerRelief::class.java)
+            startActivity(intent)
+        }
+
+        binding.imageButton2.setOnClickListener {
+            val intent = Intent(this, UserProfile::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnEducation.setOnClickListener {
+            val intent = Intent(this, Education::class.java)
+            startActivity(intent)
+        }
+        binding.btnMF.setOnClickListener {
+            val intent = Intent(this, Microfinance::class.java)
+            startActivity(intent)
+        }
 
     }
 
