@@ -15,7 +15,7 @@ class AddMfDonations : AppCompatActivity() {
     private lateinit var binding: ActivityAddMicrofinanceDonationBinding
     private lateinit var firebaseFirestore: FirebaseFirestore
     private lateinit var storageRef: StorageReference
-    private var imageURI: Uri?= null
+    private var imageURI: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,11 +40,13 @@ class AddMfDonations : AppCompatActivity() {
     }
 
     private val resultLauncher = registerForActivityResult(
-        ActivityResultContracts.GetContent()){
+        ActivityResultContracts.GetContent()
+    ) {
 
         imageURI = it
         binding.addImage.setImageURI(it)
     }
+
     private fun initVars() {
         storageRef = FirebaseStorage.getInstance().reference.child("MicrofinanceDetails")
         firebaseFirestore = FirebaseFirestore.getInstance()
@@ -68,7 +70,11 @@ class AddMfDonations : AppCompatActivity() {
 
                         // Check if any of the required fields are empty
                         if (title.isEmpty() || description.isEmpty() || location.isEmpty() || contact.isEmpty() || amountNeeded == 0.0 || startDate.isEmpty() || endDate.isEmpty()) {
-                            Toast.makeText(this, "Please fill in all the required fields", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                this,
+                                "Please fill in all the required fields",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
 
                         val map = HashMap<String, Any>()

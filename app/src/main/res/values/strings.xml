@@ -4,4 +4,16 @@
     <string name="btnEducation">Education</string>
     <string name="btnHunger">Hunger Relief</string>
     <string name="btnAll">All types</string>
+    <string name="tvAmountPay" translatable="false">Enter Amount</string>
+    <string name="tvPayMethod" translatable="false">Payment Method</string>
+    <string name="tvPayment" translatable="false">Make your Donation</string>
+    <string name="tvCardNumber" translatable="false">Card Number</string>
+    <string name="tvPayDetails" translatable="false">Payment Details</string>
+    <string name="date" translatable="false">mm/yy</string>
+    <string name="cvv" translatable="false">xxx</string>
+    <string name="btnConfirm" translatable="false">CONFIRM</string>
+    <string name="tvCVV" translatable="false">CVV</string>
+    <string name="editCardNumber" translatable="false">Enter card number</string>
+    <string name="tvExpire" translatable="false">Expiry date</string>
+    <string name="editAmount" translatable="false">0.00</string>
 </resources>
